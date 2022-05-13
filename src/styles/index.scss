@@ -9,7 +9,8 @@
 
 body {
   width: 100%;
-  font-family: $Poppins;
+  height: 1200px;
+  font-family: $MedievalSharp;
   color: $light;
   background-image: $bg-image;
   background-repeat: no-repeat, repeat;
@@ -32,7 +33,7 @@ body {
   margin: 20px;
   align-items: center;
   margin: auto;
-  opacity: 30%;
+  opacity: 50%;
 }
 
 .navLinks a {
@@ -47,6 +48,7 @@ body {
 
 .navContent {
   padding-left: 40px;
+  color: $primary;
 }
 
 // HomePage

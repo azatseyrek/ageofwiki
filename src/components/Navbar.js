@@ -19,7 +19,6 @@ const Navbar = () => {
         >
           Home
         </NavLink>
-
         <NavLink
           to="/units"
           className="nav-link"

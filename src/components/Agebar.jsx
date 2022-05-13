@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   },
   tabLabel: {
     fontSize: 18,
-    fontFamily: 'MedievalSharp',
+    fontFamily: 'MedievalSharp, sans',
     color: 'white',
   },
 });
@@ -28,7 +28,7 @@ const Agebar = () => {
       className={classes.root}
       value={age}
       onChange={handleChange}
-      indicatorColor="primary"
+      indicatorColor="secondary"
       textColor="inherit"
       centered
     >

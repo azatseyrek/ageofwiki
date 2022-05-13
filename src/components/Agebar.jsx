@@ -1,4 +1,4 @@
-import {createTheme, makeStyles, Tab, Tabs} from '@material-ui/core';
+import {makeStyles, Tab, Tabs} from '@material-ui/core';
 import React, {useState} from 'react';
 
 const useStyles = makeStyles({
@@ -6,6 +6,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   tabLabel: {
+    fontSize: 18,
     fontFamily: 'MedievalSharp',
     color: 'white',
   },
@@ -28,7 +29,7 @@ const Agebar = () => {
       value={age}
       onChange={handleChange}
       indicatorColor="secondary"
-      textColor="secondary"
+      textColor="inherit"
       centered
     >
       <Tab className={classes.tabLabel} value="all" label="All" />

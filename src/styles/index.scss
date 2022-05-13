@@ -18,9 +18,9 @@ body {
   background-color: $dark;
 }
 
-#root {
-  height: 100%;
-}
+// #root {
+//   height: 100%;
+// }
 
 // navbar
 .navContainer {
@@ -39,6 +39,7 @@ body {
 .navLinks a {
   color: white;
   padding: 40px;
+  font-size: 26px;
 }
 
 .navLinks a:hover {
@@ -49,6 +50,7 @@ body {
 .navContent {
   padding-left: 40px;
   color: $primary;
+  font-size: 24px;
 }
 
 // HomePage
@@ -56,4 +58,45 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// UnitPage
+.unitContainer {
+  margin-top: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkSlider {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// Slider
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  flex: 1;
+}
+.sliderValue {
+  font-size: 24px;
+  padding-left: 40px;
+}
+
+// Checkbox
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+}
+
+.resourceLabel {
+  font-size: 24px;
+  padding: 20px;
 }

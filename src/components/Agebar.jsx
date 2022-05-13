@@ -28,7 +28,7 @@ const Agebar = () => {
       className={classes.root}
       value={age}
       onChange={handleChange}
-      indicatorColor="secondary"
+      indicatorColor="primary"
       textColor="inherit"
       centered
     >

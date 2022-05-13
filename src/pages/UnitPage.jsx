@@ -2,6 +2,7 @@ import React from 'react';
 import Agebar from '../components/Agebar';
 import Checkboxes from '../components/Checkboxs';
 import {RangeSlider} from '../components/RangeSlider';
+import UnitTable from '../components/UnitTable';
 
 const UnitPage = () => {
   let label = 'wood';
@@ -12,6 +13,7 @@ const UnitPage = () => {
         <Checkboxes label={label} />
         <RangeSlider />
       </div>
+      <UnitTable />
     </div>
   );
 };

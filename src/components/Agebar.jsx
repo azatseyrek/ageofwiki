@@ -1,19 +1,9 @@
-import {makeStyles, Tab, Tabs} from '@material-ui/core';
+import {Tab, Tabs} from '@material-ui/core';
 import React, {useState} from 'react';
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-  tabLabel: {
-    fontSize: 18,
-    fontFamily: 'MedievalSharp, sans',
-    color: 'white',
-  },
-});
+import {agebarStyle} from '../styles/mui/agebar.mui';
 
 const Agebar = () => {
-  const classes = useStyles();
+  const classes = agebarStyle();
 
   //   active tab
   const [age, setAge] = useState('castle');

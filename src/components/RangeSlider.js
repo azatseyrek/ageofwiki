@@ -7,25 +7,26 @@ export const RangeSlider = ({label}) => {
   const [value, setValue] = useState([0, 200]);
 
   const dispatch = useDispatch();
+
   const labelState = useSelector((state) => state[label]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
     dispatch({
-      type: 'RESOURCE_COST',
+      type: 'SLIDER_VALUE',
       payload: {
         resourceName: label,
         value: newValue,
       },
     });
-    console.log(labelState);
   };
+  console.log(labelState);
 
   return (
     <div className="sliderContainer">
       <div className={classes.root}>
         <PrettoSlider
-          value={value}
+          value={labelState.checked ? value : [0, 200]}
           onChange={handleChange}
           valueLabelDisplay="auto"
           aria-labelledby="range-slider"
@@ -36,7 +37,7 @@ export const RangeSlider = ({label}) => {
       </div>
       <div>
         <span className="sliderValue">
-          {value[0]} / {value[1]}
+          {labelState.checked ? `${value[0]} / ${value[1]}` : '0 / 200'}
         </span>
       </div>
     </div>

@@ -97,11 +97,21 @@ body {
 }
 
 .resourceLabel {
-  font-size: 1em;
+  font-size: 1.4em;
   padding: 20px;
 }
 
 .unitTable {
   padding-top: $spacing-lg;
   width: 70%;
+}
+
+.unitLink {
+  color: rgb(144, 144, 202);
+  text-decoration: underline;
+}
+
+.unitLink:hover {
+  color: rgb(86, 86, 208);
+  cursor: pointer;
 }

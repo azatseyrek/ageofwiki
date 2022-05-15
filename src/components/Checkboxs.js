@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {StyledCheckbox} from '../styles/mui/checkbox.mui';
 
@@ -11,7 +11,7 @@ export default function Checkboxes({label}) {
   const handleChange = (event) => {
     setChecked(event.target.checked);
     dispatch({
-      type: 'COST',
+      type: 'CHECK_STATUS',
       payload: {
         resourceName: label,
         checked: event.target.checked,

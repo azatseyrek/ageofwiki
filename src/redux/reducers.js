@@ -2,11 +2,11 @@ import mockData from '../mock/age-of-empires-units.json';
 
 const initialState = {
   units: mockData.units,
-  filteredResult: [],
+  filteredResult: null,
   age: 'All',
-  wood: {checked: true, value: [0, 200]},
-  food: {checked: true, value: [0, 200]},
-  gold: {checked: true, value: [0, 200]},
+  wood: {checked: false, value: [0, 200]},
+  food: {checked: false, value: [0, 200]},
+  gold: {checked: false, value: [0, 200]},
 };
 
 export default function actionFilter(state = initialState, action) {
@@ -17,9 +17,9 @@ export default function actionFilter(state = initialState, action) {
         age: action.payload,
       };
     }
-    case 'RESOURCE_COST': {
+    case 'CHECK_STATUS': {
       // if resource checkbox checked
-      if (action.payload.checked !== undefined) {
+      if (typeof action.payload.checked === 'boolean') {
         return {
           ...state,
           [action.payload.resourceName]: {
@@ -27,17 +27,26 @@ export default function actionFilter(state = initialState, action) {
             value: state[action.payload.resourceName].value,
           },
         };
-      } else if (action.payload.value) {
+      }
+      break;
+    }
+    case 'SLIDER_VALUE': {
+      if (action.payload.value) {
         return {
           ...state,
           [action.payload.resourceName]: {
-            checked: state[action.payload.resourceName].checked,
             value: action.payload.value,
+            checked: true,
           },
         };
       }
       break;
     }
+    case 'SET_FILTERED':
+      return {
+        ...state,
+        filterOutput: action.payload,
+      };
 
     default:
       return state;

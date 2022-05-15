@@ -1,15 +1,23 @@
 import {Tab, Tabs} from '@material-ui/core';
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {agebarStyle} from '../styles/mui/agebar.mui';
 
 const Agebar = () => {
   const classes = agebarStyle();
+  const dispatch = useDispatch();
 
   //   active tab
   const [age, setAge] = useState('castle');
 
   const handleChange = (event, newValue) => {
     setAge(newValue);
+    dispatch({
+      type: 'AGE',
+      payload: {
+        age: newValue,
+      },
+    });
   };
 
   return (

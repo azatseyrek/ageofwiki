@@ -24,6 +24,7 @@ export const PrettoSlider = withStyles({
     },
   },
   active: {},
+
   valueLabel: {
     left: 'calc(-50% + 4px)',
   },

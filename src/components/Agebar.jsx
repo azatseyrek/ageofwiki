@@ -11,7 +11,6 @@ const Agebar = () => {
   const handleChange = (event, newValue) => {
     setAge(newValue);
   };
-  console.log(age);
 
   return (
     <Tabs

@@ -5,14 +5,17 @@ import {RangeSlider} from '../components/RangeSlider';
 import UnitTable from '../components/UnitTable';
 
 const UnitPage = () => {
-  let label = 'wood';
+  const resourceLabels = ['wood', 'food', 'gold'];
   return (
     <div className="unitContainer">
       <Agebar />
-      <div className="checkSlider">
-        <Checkboxes label={label} />
-        <RangeSlider />
-      </div>
+      {resourceLabels.map((label) => (
+        <div key={label} className="checkSlider">
+          <Checkboxes label={label} />
+          <RangeSlider label={label} />
+        </div>
+      ))}
+
       <UnitTable />
     </div>
   );

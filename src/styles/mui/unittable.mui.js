@@ -17,14 +17,24 @@ export const unitsStyle = makeStyles({
   },
   tableCellName: {
     fontFamily: 'MedievalSharp',
-    color: '#3c80ad',
+    color: '#dcdcdc',
     fontSize: 18,
-    textDecoration: 'underline',
   },
 
   tableCellCost: {
     fontFamily: 'MedievalSharp',
-    color: 'green',
+    color: '#548c6a',
     fontSize: 20,
+  },
+
+  tableCellHeader: {
+    fontFamily: 'MedievalSharp',
+    color: '#c0711c',
+    fontSize: 14,
+  },
+  tableCellBody: {
+    fontFamily: 'MedievalSharp',
+    color: '#cfc5bb',
+    fontSize: 12,
   },
 });

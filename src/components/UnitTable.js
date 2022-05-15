@@ -12,7 +12,7 @@ import {checkCost} from '../utils/utils';
 import {unitsStyle} from '../styles/mui/unittable.mui';
 import {Link} from 'react-router-dom';
 
-export default function BasicTable() {
+export default function UnitTable() {
   const classes = unitsStyle();
 
   const units = useSelector((state) =>
@@ -41,13 +41,13 @@ export default function BasicTable() {
         </TableHead>
         <TableBody>
           {units.map((unit) => (
-            <TableRow>
+            <TableRow key={unit.id}>
               <TableCell className={classes.tableCell} align="left">
                 {unit.id}
               </TableCell>
               <TableCell className={classes.tableCellName} align="center">
                 <Link className="unitLink" to={`/details/${unit.id}`}>
-                  {unit.name}{' '}
+                  {unit.name}
                 </Link>
               </TableCell>
               <TableCell className={classes.tableCell} align="left">

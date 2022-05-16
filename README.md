@@ -4,7 +4,7 @@
 
 DEMO : <a href="http://azatsyerek-ageof.surge.sh/">Demo Link</a>
 
-<p>This is age of empires app built on  ReactJS</p>
+<p>This is Age of Empires app built on  ReactJS</p>
 
 <h2 align="center">Project Details </h2>
 

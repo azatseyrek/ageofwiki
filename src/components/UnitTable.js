@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 // Util
-import {checkCost} from '../utils/utils';
+import {checkCost} from '../utils/utils'; // check the unit resource cost. (is it defined or is it equal to 0? filtering to UI)
 // style
 import {unitsStyle} from '../styles/mui/unittable.mui';
 import {Link} from 'react-router-dom';
@@ -16,9 +16,8 @@ export default function UnitTable() {
   const classes = unitsStyle();
 
   const units = useSelector((state) =>
-    state.filteredResult ? state.filteredResult : state.units,
+    state.filterOutput ? state.filterOutput : state.units,
   );
-  console.log(units);
 
   return (
     <div className="unitTable">

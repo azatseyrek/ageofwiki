@@ -1,47 +1,48 @@
+// Data
 import mockData from '../mock/age-of-empires-units.json';
 
 const initialState = {
   units: mockData.units,
-  filteredResult: null,
+  filterOutput: null,
   age: 'All',
-  wood: {checked: false, value: [0, 200]},
-  food: {checked: false, value: [0, 200]},
-  gold: {checked: false, value: [0, 200]},
+  wood: {checked: true, value: [0, 200]},
+  gold: {checked: true, value: [0, 200]},
+  food: {checked: true, value: [0, 200]},
 };
 
 export default function actionFilter(state = initialState, action) {
   switch (action.type) {
+    // Age Filter
     case 'AGE': {
       return {
         ...state,
         age: action.payload,
       };
     }
-    case 'CHECK_STATUS': {
-      // if resource checkbox checked
-      if (typeof action.payload.checked === 'boolean') {
+
+    // Cost Filter
+    // checking the checkboxes and rangeSlider value
+    case 'COST': {
+      if (action.payload.checked !== undefined) {
         return {
           ...state,
-          [action.payload.resourceName]: {
+          [action.payload.costName]: {
             checked: action.payload.checked,
-            value: state[action.payload.resourceName].value,
+            value: state[action.payload.costName].value,
           },
         };
-      }
-      break;
-    }
-    case 'SLIDER_VALUE': {
-      if (action.payload.value) {
+      } else if (action.payload.value) {
         return {
           ...state,
-          [action.payload.resourceName]: {
+          [action.payload.costName]: {
+            checked: state[action.payload.costName].checked,
             value: action.payload.value,
-            checked: true,
           },
         };
       }
       break;
     }
+    // Payload cames from sagas. The case is filtering for filteredOtput
     case 'SET_FILTERED':
       return {
         ...state,

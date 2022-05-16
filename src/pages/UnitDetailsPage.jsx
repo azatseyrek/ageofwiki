@@ -7,11 +7,10 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-// Util
-import {checkCost} from '../utils/utils';
+
 // style
 import {unitsStyle} from '../styles/mui/unittable.mui';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
 export default function UnitDetailPage() {
   const classes = unitsStyle();
@@ -21,6 +20,7 @@ export default function UnitDetailPage() {
   const units = useSelector((state) => state.units);
   const filteredUnit = units.filter((unit) => unit.id === parseInt(unitId))[0];
 
+  // taking keys and value (without cost) from data
   let unitKey = [];
   let unitValue = [];
   for (var key in filteredUnit) {
@@ -30,7 +30,6 @@ export default function UnitDetailPage() {
     }
   }
 
-  console.log(unitValue);
   return (
     <div className="unitDetailContainer">
       <div className="unitTable">

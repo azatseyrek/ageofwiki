@@ -8,15 +8,13 @@ const Agebar = () => {
   const dispatch = useDispatch();
 
   //   active tab
-  const [age, setAge] = useState('castle');
+  const [age, setAge] = useState('All');
 
   const handleChange = (event, newValue) => {
     setAge(newValue);
     dispatch({
-      type: 'AGE',
-      payload: {
-        age: newValue,
-      },
+      type: 'AGE_FILTER',
+      payload: newValue,
     });
   };
 
@@ -29,11 +27,11 @@ const Agebar = () => {
       textColor="inherit"
       centered
     >
-      <Tab className={classes.tabLabel} value="all" label="All" />
-      <Tab className={classes.tabLabel} value="dark" label="Dark" />
-      <Tab className={classes.tabLabel} value="feudal" label="Feudal" />
-      <Tab className={classes.tabLabel} value="castle" label="Castle" />
-      <Tab className={classes.tabLabel} value="imperial" label="Imperial" />
+      <Tab className={classes.tabLabel} value="All" label="All" />
+      <Tab className={classes.tabLabel} value="Dark" label="Dark" />
+      <Tab className={classes.tabLabel} value="Feudal" label="Feudal" />
+      <Tab className={classes.tabLabel} value="Castle" label="Castle" />
+      <Tab className={classes.tabLabel} value="Imperial" label="Imperial" />
     </Tabs>
   );
 };

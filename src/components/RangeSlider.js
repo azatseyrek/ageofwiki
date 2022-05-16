@@ -13,20 +13,16 @@ export const RangeSlider = ({label}) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     dispatch({
-      type: 'SLIDER_VALUE',
-      payload: {
-        resourceName: label,
-        value: newValue,
-      },
+      type: 'COST_FILTER',
+      payload: {costName: label, value: newValue},
     });
   };
-  console.log(labelState);
 
   return (
     <div className="sliderContainer">
       <div className={classes.root}>
         <PrettoSlider
-          value={labelState.checked ? value : [0, 200]}
+          value={labelState.value}
           onChange={handleChange}
           valueLabelDisplay="auto"
           aria-labelledby="range-slider"
